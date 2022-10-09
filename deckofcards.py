@@ -7,16 +7,23 @@ class Card:
     def __str__(self):
         return '{} of {}'.format(self.value, self.suit)
 
+
 class Deck:
 
     def __init__(self):
-        pass
+        # Create an empty list for cards
+        self.cards = []
+
+    def create_deck(self):
+        for cards in ["Hearts", "Clubs", "Diamonds", "Spades"]:
+            for numbers in range(1, 14):
+                self.cards.append(Card(cards, numbers))
 
 
 class Player:
 
-    def __init__(self,name):
+    def __init__(self, name):
         pass
 
-card = Card("Hearts", 6)
-print(card)
+create = Deck()
+print(create)
