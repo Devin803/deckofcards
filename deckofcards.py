@@ -28,13 +28,21 @@ class Deck:
             r = random.randint(0, i)
             self.cards[i], self.cards[r] = self.cards[r], self.cards[i]
 
+    def get_card(self):
+        return self.cards.pop()
+
+
 
 class Player:
 
     def __init__(self, name):
         self.name = name
+        self.cards = []
+
+    def show_hand(self):
+        for card in self.hand:
+            card.show()
 
 
 
 deck = Deck()
-print(deck)
