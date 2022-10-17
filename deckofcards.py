@@ -7,8 +7,8 @@ class Card:
         self.suit = suit
         self.value = value
 
-    def __str__(self):
-        return '{} of {}'.format(self.value, self.suit)
+    def show(self):
+        print('{} of {}'.format(self.value, self.suit))
 
 
 class Deck:
@@ -28,9 +28,12 @@ class Deck:
             r = random.randint(0, i)
             self.cards[i], self.cards[r] = self.cards[r], self.cards[i]
 
+    def show(self):
+        for c in self.cards:
+            c.show()
+
     def get_card(self):
         return self.cards.pop()
-
 
 
 class Player:
@@ -40,9 +43,16 @@ class Player:
         self.cards = []
 
     def show_hand(self):
-        for card in self.hand:
-            card.show()
+        for c in self.hand:
+            c.show()
+
+    def draw(self):
+        self.cards.append(deck.get_card())
+        return self
 
 
 
 deck = Deck()
+card = deck.get_card()
+card.show()
+
