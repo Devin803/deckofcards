@@ -21,6 +21,14 @@ class Deck:
     def create_deck(self):
         for suits in ["Hearts", "Clubs", "Diamonds", "Spades"]:
             for numbers in range(1, 14):
+                if numbers == 11:
+                    numbers = "Jack"
+                if numbers == 12:
+                    numbers = "Queen"
+                if numbers == 13:
+                    numbers = "King"
+                if numbers == 1:
+                    numbers = "Ace"
                 self.cards.append(Card(suits, numbers))
 
     def shuffle_deck(self):
@@ -47,12 +55,11 @@ class Player:
             c.show()
 
     def draw(self):
-        self.cards.append(deck.get_card())
+        self.cards.append(Deck.get_card())
         return self
 
 
-
 deck = Deck()
-card = deck.get_card()
-card.show()
+deck.shuffle_deck()
+deck.show()
 
