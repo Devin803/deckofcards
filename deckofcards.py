@@ -2,7 +2,6 @@ import random
 
 
 class Card:
-
     def __init__(self, suit, value):
         self.suit = suit
         self.value = value
@@ -12,7 +11,6 @@ class Card:
 
 
 class Deck:
-
     def __init__(self):
         # Create an empty list for cards
         self.cards = []
@@ -45,7 +43,6 @@ class Deck:
 
 
 class Player:
-
     def __init__(self, name):
         self.name = name
         self.cards = []
