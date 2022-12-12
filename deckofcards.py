@@ -30,7 +30,7 @@ class Deck:
                 self.cards.append(Card(suits, numbers))
 
     def shuffle_deck(self):
-        for i in range(len(self.cards) - 1):
+        for i in range(len(self.cards)):
             r = random.randint(0, i)
             self.cards[i], self.cards[r] = self.cards[r], self.cards[i]
 
